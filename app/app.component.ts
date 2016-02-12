@@ -1,88 +1,60 @@
 /**
- * Created by David on 2/8/16.
+ * Created by David on 2/11/16.
  */
 
 import {Component} from 'angular2/core';
-import {PatientDetailComponent} from './patient-detail.component';
-import {Patient} from './patient';
 import {PatientService} from './patient.service';
-import {OnInit} from 'angular2/core';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import {PatientsComponent} from './patients.component';
+import {DashboardComponent} from './dashboard.component';
 
 @Component({
     selector: 'my-app',
     template: `
         <h1>{{title}}</h1>
-        <h2>My patients</h2>
-        <ul class="patients">
-            <li *ngFor="#patient of patients" [class.selected]="patient === selectedPatient" (click)="onSelect(patient)">
-                <span class="badge">{{patient.id}}</span> {{patient.name}}
-            </li>
-        </ul>
-        <my-patient-detail [patient]="selectedPatient"></my-patient-detail>
+        <nav>
+            <a [routerLink]="['Dashboard']">Dashboard</a>
+            <a [routerLink]="['Patients']">Patients</a>
+        </nav>
+        <router-outlet></router-outlet>
         `,
     styles: [`
-      .selected {
-        background-color: #CFD8DC !important;
-        color: white;
-      }
-      .patients {
-        margin: 0 0 2em 0;
-        list-style-type: none;
-        padding: 0;
-        width: 20em;
-      }
-      .patients li {
-        cursor: pointer;
-        position: relative;
-        left: 0;
-        background-color: #EEE;
-        margin: .5em;
-        padding: .3em 0em;
-        height: 1.6em;
-        border-radius: 4px;
-      }
-      .patients li.selected:hover {
-        color: white;
-      }
-      .patients li:hover {
-        color: #607D8B;
-        background-color: #EEE;
-        left: .1em;
-      }
-      .patients .text {
-        position: relative;
-        top: -3px;
-      }
-      .patients .badge {
-        display: inline-block;
-        font-size: small;
-        color: white;
-        padding: 0.8em 0.7em 0em 0.7em;
-        background-color: #607D8B;
-        line-height: 1em;
-        position: relative;
-        left: -1px;
-        top: -4px;
-        height: 1.8em;
-        margin-right: .8em;
-        border-radius: 4px 0px 0px 4px;
-      }
-    `],
-    directives: [PatientDetailComponent],
-    providers: [PatientService]
+        nav > a {
+            display: inline-block;
+            width: 5em;
+            height: 1.5em;
+            padding: .5em;
+            background-color: #EEE;
+            text-align: center;
+            line-height: 1.5em;
+            text-decoration: none;
+            color: black;
+            border-radius: 4px;
+            border: 2px solid #607D8B;
+        }
+        nav > a:hover {
+            background-color: #CFD8DC;
+            color: white;
+        }
+    `]
+    directives: [ROUTER_DIRECTIVES],
+    providers: [ROUTER_PROVIDERS, PatientService]
 })
 
-export class AppComponent implements OnInit {
-    public title = 'List of patients';
-    constructor(private _patientService: PatientService) {};
-    public selectedPatient: Patient;
-    public patients: Patient[];
-    getPatients() {
-        this._patientService.getPatients().then(patients => this.patients = patients);
+@RouteConfig([
+    {
+        path: '/dashboard',
+        name: 'Dashboard',
+        component: DashboardComponent,
+        useAsDefault: true
+    },
+    {
+        path: '/patients',
+        name: 'Patients',
+        component: PatientsComponent
     }
-    onSelect(patient: Patient) { this.selectedPatient = patient; }
-    ngOnInit() {
-        this.getPatients();
-    }
-}
+])
 
+export class AppComponent {
+    title = 'List of patients';
+}

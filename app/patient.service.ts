@@ -7,7 +7,7 @@ import {Injectable} from 'angular2/core';
 
 @Injectable()
 
-export class PatientService {_
+export class PatientService {
     getPatients() {
         return Promise.resolve(PATIENTS);
     }
