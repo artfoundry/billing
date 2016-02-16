@@ -1,7 +1,7 @@
 /**
  * Created by David on 2/10/16.
  */
-System.register(['angular2/core'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', './patient.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -11,24 +11,39 @@ System.register(['angular2/core'], function(exports_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, router_1, patient_service_1;
     var PatientDetailComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
+            },
+            function (patient_service_1_1) {
+                patient_service_1 = patient_service_1_1;
             }],
         execute: function() {
             PatientDetailComponent = (function () {
-                function PatientDetailComponent() {
+                function PatientDetailComponent(_patientService, _routeParams) {
+                    this._patientService = _patientService;
+                    this._routeParams = _routeParams;
                 }
+                PatientDetailComponent.prototype.ngOnInit = function () {
+                    var _this = this;
+                    var id = +this._routeParams.get('id');
+                    this._patientService.getPatient(id).then(function (patient) { return _this.patient = patient; });
+                };
+                PatientDetailComponent.prototype.goBack = function () {
+                    window.history.back();
+                };
                 PatientDetailComponent = __decorate([
                     core_1.Component({
                         selector: 'my-patient-detail',
-                        inputs: ['patient'],
-                        template: "\n        <dif *ngIf=\"patient\">\n            <h2>{{patient.name}} Details</h2>\n            <div><label>id: </label>{{patient.id}}</div>\n            <div>\n                <label>name: </label>\n                <div><input [(ngModel)]=\"patient.name\" placeholder=\"name\"></div>\n            </div>\n        </dif>\n    "
+                        template: 'app/patient-detail.component.html'
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [patient_service_1.PatientService, router_1.RouteParams])
                 ], PatientDetailComponent);
                 return PatientDetailComponent;
             })();

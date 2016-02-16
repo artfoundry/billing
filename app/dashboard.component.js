@@ -37,7 +37,7 @@ System.register(['angular2/core', './patient.service'], function(exports_1) {
                 DashboardComponent = __decorate([
                     core_1.Component({
                         selector: 'my-dashboard',
-                        templateUrl: 'dashboard.component.html'
+                        templateUrl: 'app/dashboard.component.html'
                     }), 
                     __metadata('design:paramtypes', [patient_service_1.PatientService])
                 ], DashboardComponent);

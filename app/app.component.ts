@@ -7,6 +7,7 @@ import {PatientService} from './patient.service';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 import {PatientsComponent} from './patients.component';
 import {DashboardComponent} from './dashboard.component';
+import {PatientDetailComponent} from "./patient-detail.component";
 
 @Component({
     selector: 'my-app',
@@ -36,7 +37,7 @@ import {DashboardComponent} from './dashboard.component';
             background-color: #CFD8DC;
             color: white;
         }
-    `]
+    `],
     directives: [ROUTER_DIRECTIVES],
     providers: [ROUTER_PROVIDERS, PatientService]
 })
@@ -52,6 +53,11 @@ import {DashboardComponent} from './dashboard.component';
         path: '/patients',
         name: 'Patients',
         component: PatientsComponent
+    },
+    {
+        path: '/details/:id',
+        name: 'PatientDetails',
+        component: PatientDetailComponent
     }
 ])
 

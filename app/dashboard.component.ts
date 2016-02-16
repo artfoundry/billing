@@ -8,7 +8,7 @@ import {PatientService} from './patient.service';
 
 @Component({
     selector: 'my-dashboard',
-    templateUrl: 'dashboard.component.html'
+    templateUrl: 'app/dashboard.component.html'
 })
 
 export class DashboardComponent implements OnInit {

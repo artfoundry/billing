@@ -11,4 +11,7 @@ export class PatientService {
     getPatients() {
         return Promise.resolve(PATIENTS);
     }
+    getPatient(id: number) {
+        return Promise.resolve(PATIENTS).then(patients => patients.filter(patient => patient.id === id)[0]);
+    }
 }

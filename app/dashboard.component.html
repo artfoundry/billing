@@ -1,5 +1,5 @@
 <h3>Current Patients</h3>
-<div class="grid grid-pad">
+<div class="grid grid-pad patients">
     <div *ngFor="#patient of patients" (click)="gotoDetail(patient)" class="col-1-4">
         <div class="module patient">
             <h4>{{patient.name}}</h4>

@@ -1,7 +1,7 @@
 /**
  * Created by David on 2/11/16.
  */
-System.register(['angular2/core', './patient.service', 'angular2/router', './patients.component', './dashboard.component'], function(exports_1) {
+System.register(['angular2/core', './patient.service', 'angular2/router', './patients.component', './dashboard.component', "./patient-detail.component"], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -11,7 +11,7 @@ System.register(['angular2/core', './patient.service', 'angular2/router', './pat
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, patient_service_1, router_1, patients_component_1, dashboard_component_1;
+    var core_1, patient_service_1, router_1, patients_component_1, dashboard_component_1, patient_detail_component_1;
     var AppComponent;
     return {
         setters:[
@@ -29,6 +29,9 @@ System.register(['angular2/core', './patient.service', 'angular2/router', './pat
             },
             function (dashboard_component_1_1) {
                 dashboard_component_1 = dashboard_component_1_1;
+            },
+            function (patient_detail_component_1_1) {
+                patient_detail_component_1 = patient_detail_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -54,6 +57,11 @@ System.register(['angular2/core', './patient.service', 'angular2/router', './pat
                             path: '/patients',
                             name: 'Patients',
                             component: patients_component_1.PatientsComponent
+                        },
+                        {
+                            path: '/details/:id',
+                            name: 'PatientDetails',
+                            component: patient_detail_component_1.PatientDetailComponent
                         }
                     ]), 
                     __metadata('design:paramtypes', [])

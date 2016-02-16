@@ -9,6 +9,7 @@ import {PatientService} from './patient.service';
 
 @Component({
     selector: 'my-patients',
+    inputs: ['patient'],
     template: `
         <h1>{{title}}</h1>
         <h2>My patients</h2>
@@ -17,7 +18,6 @@ import {PatientService} from './patient.service';
                 <span class="badge">{{patient.id}}</span> {{patient.name}}
             </li>
         </ul>
-        <my-patient-detail [patient]="selectedPatient"></my-patient-detail>
         `,
     styles: [`
       .selected {

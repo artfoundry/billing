@@ -1,0 +1,12 @@
+<my-patient-detail [patient]="selectedPatient">
+    <dif *ngIf="patient">
+        <h2>{{patient.name}} Details</h2>
+        <div><label>id: </label>{{patient.id}}</div>
+        <div>
+            <label>name: </label>
+            <div><input [(ngModel)]="patient.name" placeholder="name"></div>
+        </div>
+        <button (click)="goBack()">Back</button>
+    </dif>
+</my-patient-detail>
+
