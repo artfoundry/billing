@@ -1,0 +1,36 @@
+nav > a {
+    display: inline-block;
+    width: 5em;
+    height: 1.5em;
+    padding: .5em;
+    background-color: #EEE;
+    text-align: center;
+    line-height: 1.5em;
+    text-decoration: none;
+    color: black;
+    border-radius: 4px;
+    border: 2px solid #607D8B;
+}
+nav > a:hover {
+    background-color: #CFD8DC;
+    color: white;
+}
+nav a:visited, a:link {
+    color: #607D8B;
+}
+
+nav a.router-link-active {
+    color: #039be5;
+}
+
+h1 {
+font-size: 1.2em;
+color: #999;
+margin-bottom: .5em;
+}
+h2 {
+font-size: 2em;
+margin-top: 0;
+padding-top: 0;
+}
+

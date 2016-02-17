@@ -19,25 +19,7 @@ import {PatientDetailComponent} from "./patient-detail.component";
         </nav>
         <router-outlet></router-outlet>
         `,
-    styles: [`
-        nav > a {
-            display: inline-block;
-            width: 5em;
-            height: 1.5em;
-            padding: .5em;
-            background-color: #EEE;
-            text-align: center;
-            line-height: 1.5em;
-            text-decoration: none;
-            color: black;
-            border-radius: 4px;
-            border: 2px solid #607D8B;
-        }
-        nav > a:hover {
-            background-color: #CFD8DC;
-            color: white;
-        }
-    `],
+    styleUrls: ['app/app.component.css'],
     directives: [ROUTER_DIRECTIVES],
     providers: [ROUTER_PROVIDERS, PatientService]
 })
@@ -55,8 +37,8 @@ import {PatientDetailComponent} from "./patient-detail.component";
         component: PatientsComponent
     },
     {
-        path: '/details/:id',
-        name: 'PatientDetails',
+        path: '/detail/:id',
+        name: 'PatientDetail',
         component: PatientDetailComponent
     }
 ])

@@ -42,7 +42,7 @@ System.register(['angular2/core', './patient.service', 'angular2/router', './pat
                     core_1.Component({
                         selector: 'my-app',
                         template: "\n        <h1>{{title}}</h1>\n        <nav>\n            <a [routerLink]=\"['Dashboard']\">Dashboard</a>\n            <a [routerLink]=\"['Patients']\">Patients</a>\n        </nav>\n        <router-outlet></router-outlet>\n        ",
-                        styles: ["\n        nav > a {\n            display: inline-block;\n            width: 5em;\n            height: 1.5em;\n            padding: .5em;\n            background-color: #EEE;\n            text-align: center;\n            line-height: 1.5em;\n            text-decoration: none;\n            color: black;\n            border-radius: 4px;\n            border: 2px solid #607D8B;\n        }\n        nav > a:hover {\n            background-color: #CFD8DC;\n            color: white;\n        }\n    "],
+                        styleUrls: ['app/app.component.css'],
                         directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [router_1.ROUTER_PROVIDERS, patient_service_1.PatientService]
                     }),
@@ -59,8 +59,8 @@ System.register(['angular2/core', './patient.service', 'angular2/router', './pat
                             component: patients_component_1.PatientsComponent
                         },
                         {
-                            path: '/details/:id',
-                            name: 'PatientDetails',
+                            path: '/detail/:id',
+                            name: 'PatientDetail',
                             component: patient_detail_component_1.PatientDetailComponent
                         }
                     ]), 

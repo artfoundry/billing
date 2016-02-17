@@ -40,8 +40,9 @@ System.register(['angular2/core', 'angular2/router', './patient.service'], funct
                 };
                 PatientDetailComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-patient-detail',
-                        template: 'app/patient-detail.component.html'
+                        inputs: ['patient'],
+                        templateUrl: 'app/patient-detail.component.html',
+                        styleUrls: ['app/patient-detail.component.css']
                     }), 
                     __metadata('design:paramtypes', [patient_service_1.PatientService, router_1.RouteParams])
                 ], PatientDetailComponent);
