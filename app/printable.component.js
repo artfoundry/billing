@@ -12,7 +12,7 @@ System.register(['angular2/core', 'angular2/router', './patient.service'], funct
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, router_1, patient_service_1;
-    var DashboardComponent;
+    var PrintableComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -25,32 +25,32 @@ System.register(['angular2/core', 'angular2/router', './patient.service'], funct
                 patient_service_1 = patient_service_1_1;
             }],
         execute: function() {
-            DashboardComponent = (function () {
-                function DashboardComponent(_router, _patientService) {
+            PrintableComponent = (function () {
+                function PrintableComponent(_router, _patientService) {
                     this._router = _router;
                     this._patientService = _patientService;
                     this.patients = [];
                 }
                 ;
-                DashboardComponent.prototype.ngOnInit = function () {
+                PrintableComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     this._patientService.getPatients().then(function (patients) { return _this.patients = patients.slice(1, 5); });
                 };
-                DashboardComponent.prototype.gotoDetail = function (patient) {
+                PrintableComponent.prototype.gotoDetail = function (patient) {
                     var link = ['PatientDetail', { id: patient.id }];
                     this._router.navigate(link);
                 };
-                DashboardComponent = __decorate([
+                PrintableComponent = __decorate([
                     core_1.Component({
-                        templateUrl: 'app/dashboard.component.html',
-                        styleUrls: ['app/dashboard.component.css']
+                        templateUrl: 'app/printable.component.html',
+                        styleUrls: ['app/printable.component.css']
                     }), 
                     __metadata('design:paramtypes', [router_1.Router, patient_service_1.PatientService])
-                ], DashboardComponent);
-                return DashboardComponent;
+                ], PrintableComponent);
+                return PrintableComponent;
             })();
-            exports_1("DashboardComponent", DashboardComponent);
+            exports_1("PrintableComponent", PrintableComponent);
         }
     }
 });
-//# sourceMappingURL=dashboard.component.js.map
+//# sourceMappingURL=printable.component.js.map

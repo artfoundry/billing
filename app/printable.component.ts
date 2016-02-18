@@ -3,17 +3,17 @@
  */
 
 import {Component, OnInit} from 'angular2/core';
-import {Patient} from './patient';
 import {Router} from 'angular2/router';
+import {Patient} from './patient';
 import {PatientService} from './patient.service';
-import {PatientDetail} from './patient-detail.component';
+import {PatientDetailComponent} from './patient-detail.component';
 
 @Component({
-    templateUrl: 'app/dashboard.component.html',
-    styleUrls: ['app/dashboard.component.css']
+    templateUrl: 'app/printable.component.html',
+    styleUrls: ['app/printable.component.css']
 })
 
-export class DashboardComponent implements OnInit {
+export class PrintableComponent implements OnInit {
     patients: Patient[] = [];
 
     constructor(private _router: Router,

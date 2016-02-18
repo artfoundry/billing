@@ -1,7 +1,7 @@
 /**
  * Created by David on 2/11/16.
  */
-System.register(['angular2/core', './patient.service', 'angular2/router', './patients.component', './dashboard.component', "./patient-detail.component"], function(exports_1) {
+System.register(['angular2/core', './patient.service', 'angular2/router', './patients.component', './printable.component', "./patient-detail.component"], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -11,7 +11,7 @@ System.register(['angular2/core', './patient.service', 'angular2/router', './pat
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, patient_service_1, router_1, patients_component_1, dashboard_component_1, patient_detail_component_1;
+    var core_1, patient_service_1, router_1, patients_component_1, printable_component_1, patient_detail_component_1;
     var AppComponent;
     return {
         setters:[
@@ -27,8 +27,8 @@ System.register(['angular2/core', './patient.service', 'angular2/router', './pat
             function (patients_component_1_1) {
                 patients_component_1 = patients_component_1_1;
             },
-            function (dashboard_component_1_1) {
-                dashboard_component_1 = dashboard_component_1_1;
+            function (printable_component_1_1) {
+                printable_component_1 = printable_component_1_1;
             },
             function (patient_detail_component_1_1) {
                 patient_detail_component_1 = patient_detail_component_1_1;
@@ -41,16 +41,16 @@ System.register(['angular2/core', './patient.service', 'angular2/router', './pat
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <h1>{{title}}</h1>\n        <nav>\n            <a [routerLink]=\"['Dashboard']\">Dashboard</a>\n            <a [routerLink]=\"['Patients']\">Patients</a>\n        </nav>\n        <router-outlet></router-outlet>\n        ",
+                        template: "\n        <h1>{{title}}</h1>\n        <nav>\n            <a [routerLink]=\"['Printable']\">Printable</a>\n            <a [routerLink]=\"['Patients']\">Patients</a>\n        </nav>\n        <router-outlet></router-outlet>\n        ",
                         styleUrls: ['app/app.component.css'],
                         directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [router_1.ROUTER_PROVIDERS, patient_service_1.PatientService]
                     }),
                     router_1.RouteConfig([
                         {
-                            path: '/dashboard',
-                            name: 'Dashboard',
-                            component: dashboard_component_1.DashboardComponent,
+                            path: '/printable',
+                            name: 'Printable',
+                            component: printable_component_1.PrintableComponent,
                             useAsDefault: true
                         },
                         {

@@ -6,7 +6,7 @@ import {Component} from 'angular2/core';
 import {PatientService} from './patient.service';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 import {PatientsComponent} from './patients.component';
-import {DashboardComponent} from './dashboard.component';
+import {PrintableComponent} from './printable.component';
 import {PatientDetailComponent} from "./patient-detail.component";
 
 @Component({
@@ -14,7 +14,7 @@ import {PatientDetailComponent} from "./patient-detail.component";
     template: `
         <h1>{{title}}</h1>
         <nav>
-            <a [routerLink]="['Dashboard']">Dashboard</a>
+            <a [routerLink]="['Printable']">Printable</a>
             <a [routerLink]="['Patients']">Patients</a>
         </nav>
         <router-outlet></router-outlet>
@@ -26,9 +26,9 @@ import {PatientDetailComponent} from "./patient-detail.component";
 
 @RouteConfig([
     {
-        path: '/dashboard',
-        name: 'Dashboard',
-        component: DashboardComponent,
+        path: '/printable',
+        name: 'Printable',
+        component: PrintableComponent,
         useAsDefault: true
     },
     {
