@@ -20,7 +20,7 @@ export class PrintableComponent implements OnInit {
                 private _patientService: PatientService) {};
 
     ngOnInit() {
-        this._patientService.getPatients().then(patients => this.patients = patients.slice(1,5));
+        this._patientService.getPatients().then(patients => this.patients = patients);
     }
 
     gotoDetail(patient: Patient) {

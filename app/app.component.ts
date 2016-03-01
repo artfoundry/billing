@@ -12,7 +12,7 @@ import {PatientDetailComponent} from "./patient-detail.component";
 @Component({
     selector: 'my-app',
     template: `
-        <h1>{{title}}</h1>
+        <h2>{{title}}</h2>
         <nav>
             <a [routerLink]="['Printable']">Printable</a>
             <a [routerLink]="['Patients']">Patients</a>
@@ -44,5 +44,5 @@ import {PatientDetailComponent} from "./patient-detail.component";
 ])
 
 export class AppComponent {
-    title = 'List of patients';
+    title = 'Billing';
 }

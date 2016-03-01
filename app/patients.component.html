@@ -1,13 +1,7 @@
-<h1>{{title}}</h1>
 <h2>My patients</h2>
-<dif *ngIf="selectedPatient">
-    <h2>
-        {{selectedPatient.name | uppercase}}
-    </h2>
-    <button (click)="gotoDetail()">View Details</button>
-</dif>
+
 <ul class="patients">
-    <li *ngFor="#patient of patients" [class.selected]="patient === selectedPatient" (click)="onSelect(patient)">
+    <li *ngFor="#patient of patients" [class.selected]="patient === selectedPatient" (click)="gotoDetail(patient)">
         <span class="badge">{{patient.id}}</span> {{patient.name}}
     </li>
 </ul>

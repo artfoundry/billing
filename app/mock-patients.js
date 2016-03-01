@@ -7,7 +7,7 @@ System.register([], function(exports_1) {
         setters:[],
         execute: function() {
             exports_1("PATIENTS", PATIENTS = [
-                { "id": 11, "name": "Batman" },
+                { "id": 11, "name": "Batman", address1: "1 Gotham Way", city: "Gotham", state: "NY", zip: "00000" },
                 { "id": 12, "name": "Superman" },
                 { "id": 13, "name": "Spiderman" },
                 { "id": 14, "name": "Storm" },

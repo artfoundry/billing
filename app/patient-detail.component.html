@@ -1,11 +1,32 @@
-<dif *ngIf="patient">
+<dif *ngIf="patient" class="modal">
     <h2>{{patient.name}} Details</h2>
-    <div>
-        <label>id: </label>{{patient.id}}
-    </div>
-    <div>
-        <label>name: </label>
-        <input [(ngModel)]="patient.name" placeholder="name">
-    </div>
-    <button (click)="goBack()">Back</button>
+    <table class="patient-details">
+        <tr>
+            <td class="label">name:</td>
+            <td class="content">
+                <input [(ngModel)]="patient.name" placeholder="name">
+            </td>
+        </tr>
+        <tr>
+            <td class="label">address:</td>
+            <td class="content">
+                <div>
+                    <input [(ngModel)]="patient.address1" placeholder="address1">
+                </div>
+                <div>
+                    <input [(ngModel)]="patient.address2" placeholder="address2">
+                </div>
+                <div>
+                    <input [(ngModel)]="patient.city" placeholder="city">
+                </div>
+                <div>
+                    <input [(ngModel)]="patient.state" placeholder="state">
+                </div>
+                <div>
+                    <input [(ngModel)]="patient.zip" placeholder="zip">
+                </div>
+            </td>
+        </tr>
+    </table>
+    <button (click)="goBack()">Close</button>
 </dif>

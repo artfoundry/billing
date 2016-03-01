@@ -1,8 +1,11 @@
-<h3>Current Patients</h3>
-<div class="grid grid-pad patients">
-    <span *ngFor="#patient of patients" (click)="gotoDetail(patient)" class="col-1-4">
-        <span class="module patient">
-            <h4>{{patient.name}}</h4>
-        </span>
-    </span>
+<h2>Current Patients</h2>
+<div *ngFor="#patient of patients" class="patient">
+    <div (click)="gotoDetail(patient)" class="mail-info">
+        <div>{{patient.name}}</div>
+        <div>{{patient.address1}}</div>
+        <div>{{patient.address2}}</div>
+        <span>{{patient.city}}, </span>
+        <span>{{patient.state}}</span>
+        <span>{{patient.zip}}</span>
+    </div>
 </div>

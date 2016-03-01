@@ -34,7 +34,7 @@ System.register(['angular2/core', 'angular2/router', './patient.service'], funct
                 ;
                 PrintableComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    this._patientService.getPatients().then(function (patients) { return _this.patients = patients.slice(1, 5); });
+                    this._patientService.getPatients().then(function (patients) { return _this.patients = patients; });
                 };
                 PrintableComponent.prototype.gotoDetail = function (patient) {
                     var link = ['PatientDetail', { id: patient.id }];

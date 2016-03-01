@@ -25,11 +25,8 @@ export class PatientsComponent implements OnInit {
         this._patientService.getPatients().then(patients => this.patients = patients);
     }
 
-    onSelect(patient: Patient) {
+    gotoDetail(patient: Patient) {
         this.selectedPatient = patient;
-    }
-
-    gotoDetail() {
         let link = ['PatientDetail', { id: this.selectedPatient.id }];
         this._router.navigate(link);
     }

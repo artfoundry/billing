@@ -38,10 +38,8 @@ System.register(['angular2/core', 'angular2/router', './patient-detail.component
                     var _this = this;
                     this._patientService.getPatients().then(function (patients) { return _this.patients = patients; });
                 };
-                PatientsComponent.prototype.onSelect = function (patient) {
+                PatientsComponent.prototype.gotoDetail = function (patient) {
                     this.selectedPatient = patient;
-                };
-                PatientsComponent.prototype.gotoDetail = function () {
                     var link = ['PatientDetail', { id: this.selectedPatient.id }];
                     this._router.navigate(link);
                 };

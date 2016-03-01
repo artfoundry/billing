@@ -3,7 +3,7 @@
     color: white;
 }
 .patients {
-    margin: 0 0 2em 0;
+    margin: 0 auto 2em auto;
     list-style-type: none;
     padding: 0;
     width: 20em;
@@ -43,4 +43,8 @@
     height: 1.8em;
     margin-right: .8em;
     border-radius: 4px 0px 0px 4px;
+}
+
+.mini-preview {
+    text-align: center;
 }

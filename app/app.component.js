@@ -36,12 +36,12 @@ System.register(['angular2/core', './patient.service', 'angular2/router', './pat
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
-                    this.title = 'List of patients';
+                    this.title = 'Billing';
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <h1>{{title}}</h1>\n        <nav>\n            <a [routerLink]=\"['Printable']\">Printable</a>\n            <a [routerLink]=\"['Patients']\">Patients</a>\n        </nav>\n        <router-outlet></router-outlet>\n        ",
+                        template: "\n        <h2>{{title}}</h2>\n        <nav>\n            <a [routerLink]=\"['Printable']\">Printable</a>\n            <a [routerLink]=\"['Patients']\">Patients</a>\n        </nav>\n        <router-outlet></router-outlet>\n        ",
                         styleUrls: ['app/app.component.css'],
                         directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [router_1.ROUTER_PROVIDERS, patient_service_1.PatientService]
