@@ -2,7 +2,6 @@
  * Created by David on 2/8/16.
  */
 System.register(['angular2/platform/browser', './app.component'], function(exports_1) {
-    "use strict";
     var browser_1, app_component_1;
     return {
         setters:[
