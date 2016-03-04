@@ -7,8 +7,14 @@ import {Injectable} from 'angular2/core';
 
 @Injectable()
 
-export class PatientService {_
+export class PatientService {
     getPatients() {
         return Promise.resolve(PATIENTS);
+    }
+    getPatient(id: number) {
+        return Promise.resolve(PATIENTS).then(
+            patients => patients.filter(
+                patient => patient.id === id)[0]
+        );
     }
 }

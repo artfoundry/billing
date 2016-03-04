@@ -1,5 +1,5 @@
 /**
- * Created by David on 2/10/16.
+ * Created by David on 2/11/16.
  */
 System.register(['angular2/core', 'angular2/router', './patient.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -12,7 +12,7 @@ System.register(['angular2/core', 'angular2/router', './patient.service'], funct
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, router_1, patient_service_1;
-    var PatientDetailComponent;
+    var PrintableComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -25,31 +25,32 @@ System.register(['angular2/core', 'angular2/router', './patient.service'], funct
                 patient_service_1 = patient_service_1_1;
             }],
         execute: function() {
-            PatientDetailComponent = (function () {
-                function PatientDetailComponent(_patientService, _routeParams) {
+            PrintableComponent = (function () {
+                function PrintableComponent(_router, _patientService) {
+                    this._router = _router;
                     this._patientService = _patientService;
-                    this._routeParams = _routeParams;
+                    this.patients = [];
                 }
-                PatientDetailComponent.prototype.ngOnInit = function () {
+                ;
+                PrintableComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    var id = +this._routeParams.get('id');
-                    this._patientService.getPatient(id).then(function (patient) { return _this.patient = patient; });
+                    this._patientService.getPatients().then(function (patients) { return _this.patients = patients; });
                 };
-                PatientDetailComponent.prototype.goBack = function () {
-                    window.history.back();
+                PrintableComponent.prototype.gotoDetail = function (patient) {
+                    var link = ['PatientDetail', { id: patient.id }];
+                    this._router.navigate(link);
                 };
-                PatientDetailComponent = __decorate([
+                PrintableComponent = __decorate([
                     core_1.Component({
-                        inputs: ['patient'],
-                        templateUrl: 'app/patient-detail.component.html',
-                        styleUrls: ['app/patient-detail.component.css']
+                        templateUrl: 'app/printable.component.html',
+                        styleUrls: ['app/printable.component.css']
                     }), 
-                    __metadata('design:paramtypes', [patient_service_1.PatientService, router_1.RouteParams])
-                ], PatientDetailComponent);
-                return PatientDetailComponent;
+                    __metadata('design:paramtypes', [router_1.Router, patient_service_1.PatientService])
+                ], PrintableComponent);
+                return PrintableComponent;
             })();
-            exports_1("PatientDetailComponent", PatientDetailComponent);
+            exports_1("PrintableComponent", PrintableComponent);
         }
     }
 });
-//# sourceMappingURL=patient-detail.component.js.map
+//# sourceMappingURL=printable.component.js.map

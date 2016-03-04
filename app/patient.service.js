@@ -28,6 +28,9 @@ System.register(['./mock-patients', 'angular2/core'], function(exports_1) {
                 PatientService.prototype.getPatients = function () {
                     return Promise.resolve(mock_patients_1.PATIENTS);
                 };
+                PatientService.prototype.getPatient = function (id) {
+                    return Promise.resolve(mock_patients_1.PATIENTS).then(function (patients) { return patients.filter(function (patient) { return patient.id === id; })[0]; });
+                };
                 PatientService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [])
