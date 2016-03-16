@@ -11,7 +11,7 @@ var ENV = process.env.ENV = process.env.NODE_ENV = 'development';
 var HMR = helpers.hasProcessFlag('hot');
 
 var metadata = {
-  title: 'Angular2 Webpack Starter by @gdi2990 from @AngularClass',
+  title: 'Patient Billing',
   baseUrl: '/',
   host: 'localhost',
   port: 3000,
@@ -34,7 +34,7 @@ module.exports = {
   entry: {
     'polyfills': './src/polyfills.ts',
     'vendor': './src/vendor.ts',
-    'main': './src/main.ts'
+    'boot': './src/app/boot.ts'
   },
 
   resolve: {
@@ -66,7 +66,7 @@ module.exports = {
       { test: /\.css$/,   loader: 'raw-loader' },
 
       // support for .html as raw text
-      { test: /\.html$/,  loader: 'raw-loader', exclude: [ helpers.root('src/index.html') ] }
+      { test: /\.html$/,  loader: 'raw-loader', exclude: [ helpers.root('src/static/index.html') ] }
 
     ]
   },
@@ -74,11 +74,11 @@ module.exports = {
   plugins: [
     new ForkCheckerPlugin(),
     new webpack.optimize.OccurenceOrderPlugin(true),
-    new webpack.optimize.CommonsChunkPlugin({ name: ['main', 'vendor', 'polyfills'], minChunks: Infinity }),
+    new webpack.optimize.CommonsChunkPlugin({ name: ['boot', 'vendor', 'polyfills'], minChunks: Infinity }),
     // static assets
     new CopyWebpackPlugin([ { from: 'src/assets', to: 'assets' } ]),
     // generating html
-    new HtmlWebpackPlugin({ template: 'src/index.html', chunksSortMode: 'none' }),
+    new HtmlWebpackPlugin({ template: 'src/static/index.html', chunksSortMode: 'none' }),
     // Environment helpers (when adding more properties make sure you include them in custom-typings.d.ts)
     new webpack.DefinePlugin({
       'ENV': JSON.stringify(metadata.ENV),
@@ -92,7 +92,7 @@ module.exports = {
   tslint: {
     emitErrors: false,
     failOnHint: false,
-    resourcePath: 'src',
+    resourcePath: 'src'
   },
   devServer: {
     port: metadata.port,
