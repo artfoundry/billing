@@ -42,7 +42,7 @@ module.exports = {
   entry: {
     'polyfills': './src/polyfills.ts',
     'vendor': './src/vendor.ts',
-    'main': './src/main.ts'
+    'boot': './src/app/boot.ts'
   },
 
   // Config for our build files
@@ -108,7 +108,7 @@ module.exports = {
         test: /\.html$/,
         loader: 'raw-loader',
         exclude: [
-          helpers.root('src/index.html')
+          helpers.root('src/static/index.html')
         ]
       }
 
@@ -126,7 +126,7 @@ module.exports = {
     new DedupePlugin(),
     new OccurenceOrderPlugin(true),
     new CommonsChunkPlugin({
-      name: ['main', 'vendor', 'polyfills'],
+      name: ['boot', 'vendor', 'polyfills'],
       filename: '[name].bundle.js',
       minChunks: Infinity
     }),
@@ -138,7 +138,7 @@ module.exports = {
       }
     ]),
     // generating html
-    new HtmlWebpackPlugin({ template: 'src/index.html', chunksSortMode: 'none' }),
+    new HtmlWebpackPlugin({ template: 'src/static/index.html', chunksSortMode: 'none' }),
     new DefinePlugin({
       'ENV': JSON.stringify(metadata.ENV),
       'HMR': false
