@@ -14,7 +14,7 @@ import {PatientDetailComponent} from "./patient-detail.component.ts";
     template: `
         <h2>{{title}}</h2>
         <nav>
-            <a [routerLink]="['Printable']">Printable</a>
+            <a [routerLink]="['Preview']">Preview</a>
             <a [routerLink]="['Patients']">Patients</a>
         </nav>
         <router-outlet></router-outlet>
@@ -26,8 +26,8 @@ import {PatientDetailComponent} from "./patient-detail.component.ts";
 
 @RouteConfig([
     {
-        path: '/printable',
-        name: 'Printable',
+        path: '/preview',
+        name: 'Preview',
         component: PrintableComponent,
         useAsDefault: true
     },

@@ -23,11 +23,10 @@
 .label {
     color: #607D8B;
     font-weight: bold;
-    display: table-column;
     vertical-align: top;
+    text-align: right;
 }
 .content {
-    display: table-column;
 }
 input {
     height: 2em;
