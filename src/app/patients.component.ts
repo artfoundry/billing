@@ -2,15 +2,15 @@
  * Created by David on 2/11/16.
  */
 
-import {Component, OnInit} from 'angular2/core';
-import {Router} from 'angular2/router';
-import {PatientDetailComponent} from './patient-detail.component.ts';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router-deprecated';
+import {PatientDetailComponent} from './patient-detail.component';
 import {Patient} from './patient';
-import {PatientService} from './patient.service.ts';
+import {PatientService} from './patient.service';
 
 @Component({
-    templateUrl: 'static/patients.component.html',
-    styleUrls: ['styles/patients.component.css'],
+    templateUrl: 'src/static/patients.component.html',
+    styleUrls: ['src/styles/patients.component.css'],
     directives: [PatientDetailComponent]
 })
 

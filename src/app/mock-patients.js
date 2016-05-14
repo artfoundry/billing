@@ -1,6 +1,7 @@
 /**
  * Created by David on 2/10/16.
  */
+"use strict";
 exports.PATIENTS = [
     { "id": 11, "name": "Batman", "address1": "1 Gotham Way", address2: "", "city": "Gotham", "state": "NY", "zip": "00000" },
     { "id": 12, "name": "Superman", "address1": "1 Gotham Way", address2: "", "city": "Gotham", "state": "NY", "zip": "00000" },

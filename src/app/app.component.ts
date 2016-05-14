@@ -2,12 +2,12 @@
  * Created by David on 2/11/16.
  */
 
-import {Component} from 'angular2/core';
-import {PatientService} from './patient.service.ts';
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
-import {PatientsComponent} from './patients.component.ts';
-import {PrintableComponent} from './printable.component.ts';
-import {PatientDetailComponent} from "./patient-detail.component.ts";
+import {Component} from '@angular/core';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
+import {PatientService} from './patient.service';
+import {PatientsComponent} from './patients.component';
+import {PrintableComponent} from './printable.component';
+import {PatientDetailComponent} from './patient-detail.component';
 
 @Component({
     selector: 'my-app',
@@ -19,7 +19,7 @@ import {PatientDetailComponent} from "./patient-detail.component.ts";
         </nav>
         <router-outlet></router-outlet>
         `,
-    styleUrls: ['styles/app.component.css'],
+    styleUrls: ['src/styles/app.component.css'],
     directives: [ROUTER_DIRECTIVES],
     providers: [ROUTER_PROVIDERS, PatientService]
 })

@@ -2,15 +2,15 @@
  * Created by David on 2/10/16.
  */
 
-import {Component, OnInit} from 'angular2/core';
-import {RouteParams} from 'angular2/router';
+import {Component, OnInit} from '@angular/core';
+import {RouteParams} from '@angular/router-deprecated';
 import {Patient} from './patient';
-import {PatientService} from './patient.service.ts';
+import {PatientService} from './patient.service';
 
 @Component({
     inputs: ['patient'],
-    templateUrl: 'static/patient-detail.component.html',
-    styleUrls: ['styles/patient-detail.component.css']
+    templateUrl: 'src/static/patient-detail.component.html',
+    styleUrls: ['src/styles/patient-detail.component.css']
 })
 
 export class PatientDetailComponent implements OnInit {

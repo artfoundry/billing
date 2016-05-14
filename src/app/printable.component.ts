@@ -2,15 +2,15 @@
  * Created by David on 2/11/16.
  */
 
-import {Component, OnInit} from 'angular2/core';
-import {Router} from 'angular2/router';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router-deprecated';
 import {Patient} from './patient';
-import {PatientService} from './patient.service.ts';
-import {PatientDetailComponent} from './patient-detail.component.ts';
+import {PatientService} from './patient.service';
+import {PatientDetailComponent} from './patient-detail.component';
 
 @Component({
-    templateUrl: 'static/printable.component.html',
-    styleUrls: ['styles/printable.component.css']
+    templateUrl: 'src/static/printable.component.html',
+    styleUrls: ['src/styles/printable.component.css']
 })
 
 export class PrintableComponent implements OnInit {
