@@ -1,9 +1,15 @@
 {
   "firebase": "patientbilling",
-  "public": "build",
+  "public": "dist",
   "ignore": [
     "firebase.json",
     "**/.*",
-    "**/node_modules/**"
+    "**/node_modules/**",
+    "typings",
+    "doc",
+    "src",
+    "*.json",
+    "*.js",
+    "README.md"
   ]
 }

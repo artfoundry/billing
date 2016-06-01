@@ -2,15 +2,15 @@
  * Created by David on 2/11/16.
  */
 
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router-deprecated';
-import {Patient} from './patient';
-import {PatientService} from './patient.service';
-import {PatientDetailComponent} from './patient-detail.component';
+import {Component, OnInit} from "@angular/core";
+import {Router} from "@angular/router-deprecated";
+import {Patient} from "./patient";
+import {PatientService} from "./patient.service";
+import {PatientDetailComponent} from "./patient-detail.component";
 
 @Component({
-    templateUrl: 'src/static/printable.component.html',
-    styleUrls: ['src/styles/printable.component.css']
+    templateUrl: "html/printable.component.html",
+    styleUrls: ["css/printable.component.css"]
 })
 
 export class PrintableComponent implements OnInit {
@@ -24,7 +24,7 @@ export class PrintableComponent implements OnInit {
     }
 
     gotoDetail(patient: Patient) {
-        let link = ['PatientDetail', { id: patient.id }];
+        let link = ["PatientDetail", { id: patient.id }];
         this._router.navigate(link);
     }
 }

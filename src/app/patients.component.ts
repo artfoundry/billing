@@ -2,24 +2,24 @@
  * Created by David on 2/11/16.
  */
 
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router-deprecated';
-import {PatientDetailComponent} from './patient-detail.component';
-import {Patient} from './patient';
-import {PatientService} from './patient.service';
+import {Component, OnInit} from "@angular/core";
+import {Router} from "@angular/router-deprecated";
+import {PatientDetailComponent} from "./patient-detail.component";
+import {Patient} from "./patient";
+import {PatientService} from "./patient.service";
 
 @Component({
-    templateUrl: 'src/static/patients.component.html',
-    styleUrls: ['src/styles/patients.component.css'],
+    templateUrl: "html/patients.component.html",
+    styleUrls: ["css/patients.component.css"],
     directives: [PatientDetailComponent]
 })
 
 export class PatientsComponent implements OnInit {
-    constructor(private _patientService: PatientService,
-                private _router: Router) {};
-
     public selectedPatient: Patient;
     public patients: Patient[];
+
+    constructor(private _patientService: PatientService,
+                private _router: Router) {};
 
     getPatients() {
         this._patientService.getPatients().then(patients => this.patients = patients);
@@ -27,7 +27,7 @@ export class PatientsComponent implements OnInit {
 
     gotoDetail(patient: Patient) {
         this.selectedPatient = patient;
-        let link = ['PatientDetail', { id: this.selectedPatient.id }];
+        let link = ["PatientDetail", { id: this.selectedPatient.id }];
         this._router.navigate(link);
     }
 

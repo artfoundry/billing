@@ -5,16 +5,16 @@
 (function(global) {
     // map tells the System loader where to look for things
     var map = {
-        'app':                        'src/app', // 'dist',
-        'rxjs':                       'node_modules/rxjs',
-        'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
-        '@angular':                   'node_modules/@angular'
+        'app':                        'app',
+        'rxjs':                       'lib/rxjs',
+        'angular2-in-memory-web-api': 'lib/angular2-in-memory-web-api',
+        '@angular':                   'lib/@angular'
     };
     // packages tells the System loader how to load when no filename and/or no extension
     var packages = {
         'app':                        { main: 'boot.js',  defaultExtension: 'js' },
         'rxjs':                       { defaultExtension: 'js' },
-        'angular2-in-memory-web-api': { defaultExtension: 'js' },
+        'angular2-in-memory-web-api': { defaultExtension: 'js' }
     };
     var packageNames = [
         '@angular/common',
@@ -26,7 +26,7 @@
         '@angular/router',
         '@angular/router-deprecated',
         '@angular/testing',
-        '@angular/upgrade',
+        '@angular/upgrade'
     ];
     // add package entries for angular packages in the form '@angular/common': { main: 'index.js', defaultExtension: 'js' }
     packageNames.forEach(function(pkgName) {
