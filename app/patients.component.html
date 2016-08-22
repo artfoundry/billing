@@ -1,7 +1,0 @@
-<h2>My patients</h2>
-
-<ul class="patients">
-    <li *ngFor="#patient of patients" [class.selected]="patient === selectedPatient" (click)="gotoDetail(patient)">
-        <span class="badge">{{patient.id}}</span> {{patient.name}}
-    </li>
-</ul>

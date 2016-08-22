@@ -1,5 +1,5 @@
 <h2>Current Patients</h2>
-<div *ngFor="#patient of patients" class="patient">
+<div *ngFor="let patient of patients" class="patient">
     <div (click)="gotoDetail(patient)" class="mail-info">
         <div>{{patient.name}}</div>
         <div>{{patient.address1}}</div>
