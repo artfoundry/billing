@@ -12,7 +12,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_deprecated_1 = require('@angular/router-deprecated');
+var router_1 = require('@angular/router');
 var patient_detail_component_1 = require('./patient-detail.component');
 var patient_service_1 = require('./patient.service');
 var PatientsComponent = (function () {
@@ -26,8 +26,7 @@ var PatientsComponent = (function () {
         this._patientService.getPatients().then(function (patients) { return _this.patients = patients; });
     };
     PatientsComponent.prototype.gotoDetail = function (patient) {
-        this.selectedPatient = patient;
-        var link = ['PatientDetail', { id: this.selectedPatient.id }];
+        var link = ['/detail', patient.id];
         this._router.navigate(link);
     };
     PatientsComponent.prototype.ngOnInit = function () {
@@ -39,7 +38,7 @@ var PatientsComponent = (function () {
             styleUrls: ['src/styles/patients.component.css'],
             directives: [patient_detail_component_1.PatientDetailComponent]
         }), 
-        __metadata('design:paramtypes', [patient_service_1.PatientService, router_deprecated_1.Router])
+        __metadata('design:paramtypes', [patient_service_1.PatientService, router_1.Router])
     ], PatientsComponent);
     return PatientsComponent;
 }());

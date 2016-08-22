@@ -2,26 +2,30 @@
  * Created by David on 2/10/16.
  */
 
-import {Component, OnInit} from '@angular/core';
-import {RouteParams} from '@angular/router-deprecated';
-import {Patient} from './patient';
-import {PatientService} from './patient.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Patient } from './patient';
+import { PatientService } from "./patient.service";
 
 @Component({
-    inputs: ['patient'],
+    selector: 'my-patient-detail'
     templateUrl: 'src/static/patient-detail.component.html',
     styleUrls: ['src/styles/patient-detail.component.css']
 })
 
 export class PatientDetailComponent implements OnInit {
-    patient: Patient;
+    @Input patient: Patient;
 
-    constructor(private _patientService: PatientService,
-                private _routeParams: RouteParams) {}
+    constructor(
+        private _patientService: PatientService,
+        private _route: ActivatedRoute
+    ) {}
 
-    ngOnInit() {
-        let id = +this._routeParams.get('id');
-        this._patientService.getPatient(id).then(patient => this.patient = patient);
+    ngOnInit(): void {
+        this._route.params.forEach((params: Params) => {
+            let id = +params['id'];
+            this._patientService.getPatient(id).then(patient => this.patient = patient);
+        })
     }
 
     goBack() {

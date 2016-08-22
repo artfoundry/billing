@@ -2,11 +2,10 @@
  * Created by David on 2/11/16.
  */
 
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router-deprecated';
-import {Patient} from './patient';
-import {PatientService} from './patient.service';
-import {PatientDetailComponent} from './patient-detail.component';
+import { Component, OnInit } from '@angular/core';
+
+import { Patient } from './patient';
+import { PatientService } from './patient.service';
 
 @Component({
     templateUrl: 'src/static/printable.component.html',
@@ -16,15 +15,11 @@ import {PatientDetailComponent} from './patient-detail.component';
 export class PrintableComponent implements OnInit {
     patients: Patient[] = [];
 
-    constructor(private _router: Router,
-                private _patientService: PatientService) {};
+    constructor(
+        private _patientService: PatientService
+    ) {}
 
     ngOnInit() {
         this._patientService.getPatients().then(patients => this.patients = patients);
-    }
-
-    gotoDetail(patient: Patient) {
-        let link = ['PatientDetail', { id: patient.id }];
-        this._router.navigate(link);
     }
 }

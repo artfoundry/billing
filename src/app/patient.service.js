@@ -20,7 +20,8 @@ var PatientService = (function () {
         return Promise.resolve(mock_patients_1.PATIENTS);
     };
     PatientService.prototype.getPatient = function (id) {
-        return Promise.resolve(mock_patients_1.PATIENTS).then(function (patients) { return patients.filter(function (patient) { return patient.id === id; })[0]; });
+        return this.getPatients()
+            .then(function (patients) { return patients.find(function (patient) { return patient.id === id; }); });
     };
     PatientService = __decorate([
         core_1.Injectable(), 
