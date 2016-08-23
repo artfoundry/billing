@@ -23,7 +23,7 @@ export class PatientsComponent implements OnInit {
 
     public patients: Patient[];
 
-    getPatients() {
+    getPatients(): void {
         this._patientService.getPatients().then(patients => this.patients = patients);
     }
 

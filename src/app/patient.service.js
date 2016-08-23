@@ -11,8 +11,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var mock_patients_1 = require('./mock-patients');
 var core_1 = require('@angular/core');
+var mock_patients_1 = require('./mock-patients');
 var PatientService = (function () {
     function PatientService() {
     }

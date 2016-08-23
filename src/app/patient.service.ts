@@ -2,14 +2,15 @@
  * Created by David on 2/10/16.
  */
 
+import { Injectable } from '@angular/core';
+
 import { PATIENTS } from './mock-patients';
 import { Patient } from './patient';
-import { Injectable } from '@angular/core';
 
 @Injectable()
 
 export class PatientService {
-    getPatients() {
+    getPatients(): Promise<Patient[]> {
         return Promise.resolve(PATIENTS);
     }
     getPatient(id: number): Promise<Patient> {
