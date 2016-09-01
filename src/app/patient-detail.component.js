@@ -11,13 +11,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require('@angular/core'); // trigger, state, style, transition, animate used for animation
 var router_1 = require('@angular/router');
+var patient_1 = require('./patient');
 var patient_service_1 = require("./patient.service");
 var PatientDetailComponent = (function () {
-    function PatientDetailComponent(_patientService, _route) {
+    function PatientDetailComponent(_patientService, _route, el) {
         this._patientService = _patientService;
         this._route = _route;
+        this.el = el.nativeElement;
     }
     PatientDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -31,15 +33,15 @@ var PatientDetailComponent = (function () {
     };
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', Object)
+        __metadata('design:type', patient_1.Patient)
     ], PatientDetailComponent.prototype, "patient", void 0);
     PatientDetailComponent = __decorate([
         core_1.Component({
             selector: 'my-patient-detail',
             templateUrl: 'src/static/patient-detail.component.html',
-            styleUrls: ['src/styles/patient-detail.component.css']
+            styleUrls: ['src/styles/patient-detail.component.css'],
         }), 
-        __metadata('design:paramtypes', [patient_service_1.PatientService, router_1.ActivatedRoute])
+        __metadata('design:paramtypes', [patient_service_1.PatientService, router_1.ActivatedRoute, core_1.ElementRef])
     ], PatientDetailComponent);
     return PatientDetailComponent;
 }());

@@ -1,32 +1,46 @@
-<dif *ngIf="patient" class="modal">
+<dif *ngIf="patient">
     <h2>{{patient.name}} Details</h2>
-    <table class="patient-details">
-        <tr>
-            <td class="label">name:</td>
-            <td class="content">
-                <!--<input [(ngModel)]="patient.name" placeholder="name">-->
-            </td>
-        </tr>
-        <tr>
-            <td class="label">address:</td>
-            <td class="content">
-                <!--<div>-->
-                    <!--<input [(ngModel)]="patient.address1" placeholder="address1">-->
-                <!--</div>-->
-                <!--<div>-->
-                    <!--<input [(ngModel)]="patient.address2" placeholder="address2">-->
-                <!--</div>-->
-                <!--<div>-->
-                    <!--<input [(ngModel)]="patient.city" placeholder="city">-->
-                <!--</div>-->
-                <!--<div>-->
-                    <!--<input [(ngModel)]="patient.state" placeholder="state">-->
-                <!--</div>-->
-                <!--<div>-->
-                    <!--<input [(ngModel)]="patient.zip" placeholder="zip">-->
-                <!--</div>-->
-            </td>
-        </tr>
-    </table>
-    <button (click)="goBack()">Back</button>
+    <form>
+        <table class="patient-details">
+            <tr>
+                <td><button (click)="goBack()">Back</button></td>
+            </tr>
+            <tr>
+                <td class="label">name:</td>
+                <td class="content">
+                    <input type="text" [(ngModel)]="patient.name" name="name" placeholder="name">
+                </td>
+                <td>
+                    <span class="saved hidden">Saved</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">address:</td>
+                <td class="content">
+                    <div>
+                        <input type="text" [(ngModel)]="patient.address1" #address1="ngModel" name="address1" placeholder="address1">
+                    </div>
+                    <div>
+                        <input type="text" [(ngModel)]="patient.address2" #address2="ngModel" name="address2" placeholder="address2">
+                    </div>
+                    <div>
+                        <input type="text" [(ngModel)]="patient.city" #city="ngModel" name="city" placeholder="city">
+                    </div>
+                    <div>
+                        <input type="text" [(ngModel)]="patient.state" #state="ngModel" name="state" placeholder="state">
+                    </div>
+                    <div>
+                        <input type="text" [(ngModel)]="patient.zip" #zip="ngModel" name="zip" placeholder="zip">
+                    </div>
+                </td>
+                <td class="confirmation">
+                    <span [hidden]="address1.valid || address1.pristine" class="saved">Saved</span>
+                    <span [hidden]="address2.valid || address2.pristine" class="saved">Saved</span>
+                    <span [hidden]="city.valid || city.pristine" class="saved">Saved</span>
+                    <span [hidden]="state.valid || state.pristine" class="saved">Saved</span>
+                    <span [hidden]="zip.valid || zip.pristine" class="saved">Saved</span>
+                </td>
+            </tr>
+        </table>
+    </form>
 </dif>
