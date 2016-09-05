@@ -1,20 +1,20 @@
-.modal {
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60%;
-    height: 80%;
-    margin: auto;
-    padding: 2%;
-    z-index: 100;
-    -webkit-box-shadow: 0 0 20px #999;
-    -moz-box-shadow: 0 0 20px #999;
-    box-shadow: 0 0 20px #999;
-    border-radius: 10px;
-    background: white;
-    text-align: center;
-}
+/*.modal {*/
+    /*position: absolute;*/
+    /*top: 5%;*/
+    /*left: 50%;*/
+    /*transform: translateX(-50%);*/
+    /*width: 60%;*/
+    /*height: 80%;*/
+    /*margin: auto;*/
+    /*padding: 2%;*/
+    /*z-index: 100;*/
+    /*-webkit-box-shadow: 0 0 20px #999;*/
+    /*-moz-box-shadow: 0 0 20px #999;*/
+    /*box-shadow: 0 0 20px #999;*/
+    /*border-radius: 10px;*/
+    /*background: white;*/
+    /*text-align: center;*/
+/*}*/
 .patient-details {
     width: 50%;
     margin: auto;
