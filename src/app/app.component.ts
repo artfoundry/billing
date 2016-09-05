@@ -9,8 +9,8 @@ import {Component} from '@angular/core';
     template: `
         <h2>{{title}}</h2>
         <nav>
-            <a [routerLink]="['/preview']">Preview</a>
-            <a [routerLink]="['/patients']">Patients</a>
+            <a routerLink="/preview">Preview</a>
+            <a routerLink="/patients">Patients</a>
         </nav>
         <router-outlet></router-outlet>
         `,

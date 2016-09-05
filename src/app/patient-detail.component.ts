@@ -8,13 +8,13 @@ import { Patient } from './patient';
 import { PatientService } from "./patient.service";
 
 @Component({
-    selector: 'my-patient-detail'
+    selector: 'my-patient-detail',
     templateUrl: 'src/static/patient-detail.component.html',
     styleUrls: ['src/styles/patient-detail.component.css']
 })
 
 export class PatientDetailComponent implements OnInit {
-    @Input patient: Patient;
+    @Input() patient: Patient;
 
     constructor(
         private _patientService: PatientService,

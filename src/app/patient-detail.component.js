@@ -30,7 +30,7 @@ var PatientDetailComponent = (function () {
         window.history.back();
     };
     __decorate([
-        core_1.Input, 
+        core_1.Input(), 
         __metadata('design:type', Object)
     ], PatientDetailComponent.prototype, "patient", void 0);
     PatientDetailComponent = __decorate([
